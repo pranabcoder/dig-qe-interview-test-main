@@ -69,7 +69,7 @@ export default class Page {
    * @param path path of the sub page (e.g. /path/to/page.html)
    */
   open(path = "") {
-    if (path in this.paths) return this.open(this.paths[path]);
-    return browser.url(`${this.base}/${path}`);
+    const resolvedPath = Object.prototype.hasOwnProperty.call(this.paths, path) ? this.paths[path] : path;
+    return browser.url(`${this.base}/${resolvedPath}`);
   }
 }

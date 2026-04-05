@@ -9,9 +9,10 @@ class BasicAuthPage {
     await this.open(username, password);
   }
   open(username, password) {
-    return browser.url(
-      `https://${username}:${password}@the-internet.herokuapp.com/basic_auth`
-    );
+     console.log(`Logging in with username: ${username} and password: ${password}`);
+     const authUrl = `https://${username}:${password}@the-internet.herokuapp.com/basic_auth`;
+     console.log(`Logged in: ${authUrl}`);
+     return browser.url(authUrl);
   }
 }
 

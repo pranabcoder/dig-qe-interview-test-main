@@ -5,7 +5,7 @@ Feature: The Internet Guinea Pig Website
     Given I am on the Checkboxes page
     When I select checkbox <num>
     Then The checkbox should be checked
-      Examples:
+    Examples:
       | num |
-      |   1 |
-      |   2 |
+      | 1   |
+      | 3   |

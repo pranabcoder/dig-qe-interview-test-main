@@ -15,10 +15,12 @@ When(/^I click the (.+) link$/, async function (page) {
   await index.click(page);
 });
 
-Then("I should be driected to the selected page", async function () {
-  const html = await $("*").getHTML();
-  console.log(html);
-  expect(html).toMatch(new RegExp(`/h3.+${this.page}.+h3/`, "gm"));
+Then("I should be directed to the selected page", async function () {
+  // const html = await $("*").getHTML();
+  // console.log(html);
+  // expect(html).toMatch(new RegExp(`/h3.+${this.page}.+h3/`, "gm"));
   // const header = await $("h3");
-  // expect(header).toHaveTextContaining(this.page);
+  // await expect($("h3")).toBeDisplayed();
+  // expect(header).toHaveText(this.page);
+  await expect($("h3")).toHaveTextContaining(this.page);
 });
